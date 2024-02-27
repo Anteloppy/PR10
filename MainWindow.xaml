@@ -16,7 +16,10 @@
             <RowDefinition Height="1*"/>
             <RowDefinition Height="5*"/>
         </Grid.RowDefinitions>
-        <Label Margin="15,15,0,0" Content="Products" FontWeight="Bold" FontSize="25" FontFamily="Comic Sans MS" VerticalContentAlignment="Center"/>
+        <StackPanel Margin="15,10,0,0">
+            <Button Content="Add" x:Name="Add" HorizontalAlignment="Center" FontSize="15" VerticalAlignment="Center"/>
+            <Label Margin="0,-10,0,0" Content="Products" FontWeight="Bold" FontSize="25" FontFamily="Comic Sans MS" VerticalContentAlignment="Center"/>
+        </StackPanel>
         <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5,15,0,0">
             <Label Margin="0,0,10,0" FontSize="15" FontFamily="Comic Sans MS" Content="Поиск:" VerticalAlignment="Bottom"/>
             <TextBox x:Name="TBSearch" Width="100" VerticalAlignment="Center" Margin="0,5,5,5" Height="25" VerticalContentAlignment="Center" FontFamily="Comic Sans MS" FontSize="15"/>
@@ -37,6 +40,6 @@
             </StackPanel>
             <Image x:Name="Exit" Width="25" Height="25" Source="/exit.png" MouseDown="Exit_MouseDown"/>
         </StackPanel>
-        <DataGrid x:Name="DGProduct" Margin="15,0,15,15" AutoGenerateColumns="True" Grid.Row="1" Grid.ColumnSpan="3"/>
+        <DataGrid FontFamily="Comic Sans MS" x:Name="DGProduct" Margin="15,0,15,15" AutoGenerateColumns="True" Grid.Row="1" Grid.ColumnSpan="3"/>
     </Grid>
 </Window>

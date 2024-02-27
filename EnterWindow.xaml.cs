@@ -24,6 +24,11 @@ namespace pr10
         public EnterWindow()
         {
             InitializeComponent();
+            CapchaHide();
+        }
+
+        public void CapchaHide()
+        {
             this.Height = 250;
             GridLengthConverter gridLengthConverter = new GridLengthConverter();
             LogWinRow3.Height = (GridLength)gridLengthConverter.ConvertFrom("0*");
@@ -40,7 +45,16 @@ namespace pr10
 
         public void CapchaGenerate()
         {
-            Random r = new Random();
+            Random rnd = new Random();
+            char randomChar;
+            randomChar = (char)rnd.Next('A', 'Z');
+            LCapcha1.Content = randomChar;
+            randomChar = (char)rnd.Next('A', 'Z');
+            LCapcha2.Content = randomChar;
+            randomChar = (char)rnd.Next('0', '9');
+            LCapcha3.Content = randomChar;
+            randomChar = (char)rnd.Next('A', 'Z');
+            LCapcha4.Content = randomChar;
         }
 
         public void CapchaShow()
@@ -50,6 +64,7 @@ namespace pr10
             this.Height = 400;
             GridLengthConverter gridLengthConverter = new GridLengthConverter();
             LogWinRow3.Height = (GridLength)gridLengthConverter.ConvertFrom("4*");
+            CapchaGenerate();
             SPCapcha.Visibility = Visibility.Visible;
             string capcha = Convert.ToString(LCapcha1.Content) + Convert.ToString(LCapcha2.Content) + Convert.ToString(LCapcha3.Content) + Convert.ToString(LCapcha4.Content);
             //text = text.Substring(2);

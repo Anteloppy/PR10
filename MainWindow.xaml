@@ -8,15 +8,15 @@
         Title="Товары" Height="450" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="0.8*"/>
-            <ColumnDefinition Width="2.7*"/>
+            <ColumnDefinition Width="0.85*"/>
+            <ColumnDefinition Width="2.8*"/>
             <ColumnDefinition Width="1.6*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="5*"/>
         </Grid.RowDefinitions>
-        <Label Margin="15,15,0,0" Content="Товары" FontWeight="Bold" FontSize="25" FontFamily="Comic Sans MS" VerticalContentAlignment="Center"/>
+        <Label Margin="15,15,0,0" Content="Products" FontWeight="Bold" FontSize="25" FontFamily="Comic Sans MS" VerticalContentAlignment="Center"/>
         <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5,15,0,0">
             <Label Margin="0,0,10,0" FontSize="15" FontFamily="Comic Sans MS" Content="Поиск:" VerticalAlignment="Bottom"/>
             <TextBox x:Name="TBSearch" Width="100" VerticalAlignment="Center" Margin="0,5,5,5" Height="25" VerticalContentAlignment="Center" FontFamily="Comic Sans MS" FontSize="15"/>
@@ -31,9 +31,9 @@
             <Image x:Name="SortZ" Width="25" Height="25" MouseDown="SortZ_MouseDown" Source="/sort_z.png"/>
         </StackPanel>
         <StackPanel Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,15,15,0">
-            <StackPanel HorizontalAlignment="Center" Margin="0,0,25,0">
+            <StackPanel HorizontalAlignment="Right" Margin="0,0,25,0">
                 <Label x:Name="LRole" Content="Role" FontSize="15" FontFamily="Comic Sans MS" VerticalContentAlignment="Bottom"/>
-                <Label x:Name="LFIO" Content="FIO" FontSize="15" FontFamily="Comic Sans MS" VerticalContentAlignment="Bottom"/>
+                <Label x:Name="LFIO" Content="FIO" FontSize="12" FontFamily="Comic Sans MS" VerticalContentAlignment="Bottom"/>
             </StackPanel>
             <Image x:Name="Exit" Width="25" Height="25" Source="/exit.png" MouseDown="Exit_MouseDown"/>
         </StackPanel>

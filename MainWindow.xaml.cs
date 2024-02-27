@@ -30,33 +30,39 @@ namespace pr10
         public MainWindow(string user)
         {
             InitializeComponent();
-            //Label role = new Label();
-            //Label fio = new Label();
             switch (user)
             {
-                case "8lf0g@yandex.ru": LRole.Content = "Администратор"; LFIO.Content = "Богдан Львович Лавров";
+                case "8lf0g@yandex.ru":
+                    LRole.Content = "Администратор"; LFIO.Content = "Богдан Львович Лавров";
                     break;
-                case "1zx8@yandex.ru": LRole.Content = "Администратор"; LFIO.Content = "Полина Фёдоровна Смирнова";
+                case "1zx8@yandex.ru":
+                    LRole.Content = "Администратор"; LFIO.Content = "Полина Фёдоровна Смирнова";
                     break;
-                case "x@mail.ru": LRole.Content = "Администратор"; LFIO.Content = "София Данииловна Полякова";
+                case "x@mail.ru":
+                    LRole.Content = "Администратор"; LFIO.Content = "София Данииловна Полякова";
                     break;
-                case "34d@gmail.com": LRole.Content = "Менеджер"; LFIO.Content = "Марина Данииловна Чеботарева";
+                case "34d@gmail.com":
+                    LRole.Content = "Менеджер"; LFIO.Content = "Марина Данииловна Чеботарева";
                     break;
-                case "pxacl@mail.ru": LRole.Content = "Менеджер"; LFIO.Content = "Адам Иванович Ермолов";
+                case "pxacl@mail.ru":
+                    LRole.Content = "Менеджер"; LFIO.Content = "Адам Иванович Ермолов";
                     break;
-                case "7o1@gmail.com": LRole.Content = "Менеджер"; LFIO.Content = "Андрей Кириллович Васильев";
+                case "7o1@gmail.com":
+                    LRole.Content = "Менеджер"; LFIO.Content = "Андрей Кириллович Васильев";
                     break;
-                case "1@gmail.com": LRole.Content = "Клиент"; LFIO.Content = "Максим Иванович Маслов";
+                case "1@gmail.com":
+                    LRole.Content = "Клиент"; LFIO.Content = "Максим Иванович Маслов";
                     break;
-                case "iut@gmail.com": LRole.Content = "Клиент"; LFIO.Content = "Михаил Тимурович Симонов";
+                case "iut@gmail.com":
+                    LRole.Content = "Клиент"; LFIO.Content = "Михаил Тимурович Симонов";
                     break;
-                case "e3t@outlook.com": LRole.Content = "Клиент"; LFIO.Content = "Ксения Михайловна Павлова";
+                case "e3t@outlook.com":
+                    LRole.Content = "Клиент"; LFIO.Content = "Ксения Михайловна Павлова";
                     break;
-                case "41clb6o2g@yandex.ru": LRole.Content = "Клиент"; LFIO.Content = "Григорий Юрьевич Трифонов";
+                case "41clb6o2g@yandex.ru":
+                    LRole.Content = "Клиент"; LFIO.Content = "Григорий Юрьевич Трифонов";
                     break;
-            }
-            //LRole = role;
-            //LFIO = fio;
+            };
         }
 
         public void LoadData(string sql)

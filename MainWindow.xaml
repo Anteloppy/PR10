@@ -17,7 +17,7 @@
             <RowDefinition Height="5*"/>
         </Grid.RowDefinitions>
         <StackPanel Margin="15,10,0,0">
-            <Button Content="Add" x:Name="Add" HorizontalAlignment="Center" FontSize="15" VerticalAlignment="Center"/>
+            <Button Content="Add" x:Name="Add" HorizontalAlignment="Center" FontSize="15" VerticalAlignment="Center" Click="Add_Click"/>
             <Label Margin="0,-10,0,0" Content="Products" FontWeight="Bold" FontSize="25" FontFamily="Comic Sans MS" VerticalContentAlignment="Center"/>
         </StackPanel>
         <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5,15,0,0">
@@ -40,6 +40,37 @@
             </StackPanel>
             <Image x:Name="Exit" Width="25" Height="25" Source="/exit.png" MouseDown="Exit_MouseDown"/>
         </StackPanel>
-        <DataGrid FontFamily="Comic Sans MS" x:Name="DGProduct" Margin="15,0,15,15" AutoGenerateColumns="True" Grid.Row="1" Grid.ColumnSpan="3"/>
+        <DataGrid FontFamily="Comic Sans MS" x:Name="DGProduct" Margin="15,0,15,15" AutoGenerateColumns="True" Grid.Row="1" Grid.ColumnSpan="3" Visibility="Hidden"/>
+        <ListBox x:Name="LBProducts" Grid.Row="1" Grid.ColumnSpan="3" Margin="10" FontFamily="Comic Sans MS" FontSize="15">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="150"/>
+                            <ColumnDefinition Width="1000"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Image Source="{Binding picture, TargetNullValue='picture.png'}" Width="150" Height="100" Grid.Column="0"/>
+                        <StackPanel Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center">
+                            <TextBlock Text="{Binding name, StringFormat='Наименование: {0}'}"/>
+                            <TextBlock Text="Описание:"/>
+                            <TextBlock Text="{Binding description, StringFormat='\{0}'}" FontSize="10"/>
+                            <TextBlock Text="{Binding manufacturer, StringFormat='Производитель: {0}'}"/>
+                            <TextBlock Text="{Binding price, StringFormat='Цена: {0}'}"/>
+                        </StackPanel>
+                        <TextBlock Text="{Binding quantity_in_stock, StringFormat='Наличие: {0}'}" Grid.Column="2" HorizontalAlignment="Center"  VerticalAlignment="Center"/>
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+            <ListBox.ItemContainerStyle>
+                <Style TargetType="ListBoxItem">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding quantity_in_stock}" Value="0">
+                            <Setter Property="Background" Value="DarkGray"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </ListBox.ItemContainerStyle>
+        </ListBox>
     </Grid>
 </Window>

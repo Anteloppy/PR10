@@ -28,11 +28,13 @@ namespace pr10
             InitializeComponent();
             LRole.Content = "Guest";
             LFIO.Content = "";
+            Add.Visibility = Visibility.Hidden;
             LoadData("select P.id, P.vendor_code, P.name, U.name as unit, P.price, A.size as max_disc, R.name as provider, M.name as manufacturer, C.name as category, I.discaunt as cur_disc, P.quantity_in_stock, P.description, P.picture from Products as P join Units as U on P.unit = U.id join Maximum_discaunts as A on P.max_disc = A.id join Providers as R on P.provider = R.id join Manufacturers as M on P.manufacturer = M.id join Categories as C on P.category = C.id join Current_discaunts as I on P.cur_disc = I.id;");
         }
         public MainWindow(string user)
         {
             InitializeComponent();
+            Add.Visibility = Visibility.Visible;
             switch (user)
             {
                 case "8lf0g@yandex.ru":
@@ -72,13 +74,11 @@ namespace pr10
         private static string connectionString = "server=localhost; port=3306; database=PR10; user=root; password=Nimda123;";
         public void LoadData(string sql)
         {
-            List<Product> crops = new List<Product>();
+            List<Product> products = new List<Product>();
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 conn.Open();
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
-                    //("select number, product, quantity, date_order, date_delivery, pickup_point, user, code, status from Orders as O join Products as P on O.Products = P.id join Pickup_points as I on O.Pickup_point = I.id join Users as U on O.User = U.id join Statuses as S on O.Status = S.id", conn);
-
                 using (MySqlDataReader reader = cmd.ExecuteReader())
                 {
                     while (reader.Read())
@@ -98,11 +98,11 @@ namespace pr10
                         record.description = reader.GetString("description");
                         record.picture = reader.GetString("picture");
 
-                        crops.Add(record);
+                        products.Add(record);
                     }
                 }
-            }
-            DGProduct.ItemsSource = crops;
+            };
+            LBProducts.ItemsSource = products;
         }
 
         private void Exit_MouseDown(object sender, MouseButtonEventArgs e)
@@ -118,6 +118,11 @@ namespace pr10
         }
 
         private void SortZ_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void Add_Click(object sender, RoutedEventArgs e)
         {
 
         }

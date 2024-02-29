@@ -8,9 +8,11 @@
         Title="EditWindow" Height="520" Width="400">
     <Grid>
         <StackPanel VerticalAlignment="Top" HorizontalAlignment="Center" Grid.Column="0" Orientation="Vertical" Width="300" Margin="5">
-            <Button Margin="-5,15,-5,10" FontFamily="Comic Sans MS" x:Name="BEdit" Content="Изменить" Width="100" Height="30" Padding="5" Click="BEdit_Click" Background="#FFA7FFFD" BorderBrush="#FF3CB1ED"/>
-                <!--<Label Content="посевную площать, где id:" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="5"/>
-                <TextBox x:Name="TBid" Width="25" Padding="5" Height="25" HorizontalAlignment="Center"/>-->
+            <StackPanel Margin="-5,15,-5,10" Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button FontFamily="Comic Sans MS" x:Name="Edit" Content="Edit" Width="70" Height="30" Padding="5" Click="Edit_Click" Background="#FFA7FFFD" BorderBrush="#FF3CB1ED"/>
+                <Button Margin="15,0" x:Name="Delete" Content="Delete" FontFamily="Comic Sans MS" Width="70" Height="30" Padding="5" Click="Delete_Click" Background="#FFFFA7A7" BorderBrush="#FFED3C54"/>
+                <Button x:Name="Back" Content="Cancel" FontFamily="Comic Sans MS" Width="70" Height="30" Padding="5" Click="Back_Click"/>
+            </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="5" HorizontalAlignment="Center">
                 <Label FontFamily="Comic Sans MS" Content="id товара:" HorizontalAlignment="Center" Padding="5"/>
                 <Label Content="id" FontFamily="Comic Sans MS" x:Name="Lid" Width="25" Padding="5" Height="25" HorizontalAlignment="Center" Foreground="Gray"/>

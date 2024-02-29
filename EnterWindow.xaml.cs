@@ -67,6 +67,7 @@ namespace pr10
             CapchaGenerate();
             SPCapcha.Visibility = Visibility.Visible;
             string capcha = Convert.ToString(LCapcha1.Content) + Convert.ToString(LCapcha2.Content) + Convert.ToString(LCapcha3.Content) + Convert.ToString(LCapcha4.Content);
+            Enter.Visibility = Visibility.Hidden;
             //text = text.Substring(2);
         }
 
@@ -137,6 +138,8 @@ namespace pr10
             {
                 MessageBox.Show("Capcha has checked");
                 chc = true;
+                Enter.Visibility = Visibility.Visible;
+                CapchaHide();
             }
             else
             {

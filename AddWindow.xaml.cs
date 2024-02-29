@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using Org.BouncyCastle.Bcpg.OpenPgp;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,6 +25,12 @@ namespace pr10
         {
             InitializeComponent();
         }
+        public string u;
+        public AddWindow(string user)
+        {
+            InitializeComponent();
+            u = user;
+        }
         private static string connectionString = "server=localhost; port=3306; database=PR10; user=root; password=Nimda123;";
         private void Add_Click(object sender, RoutedEventArgs e)
         {
@@ -34,7 +41,9 @@ namespace pr10
             cmd.ExecuteNonQuery();
             conn.Close();
             MessageBox.Show("товар добавлен");
-
+            MainWindow w = new MainWindow(u);
+            w.Show();
+            this.Close();
         }
     }
 }

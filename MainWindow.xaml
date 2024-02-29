@@ -23,7 +23,7 @@
         <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5,15,0,0">
             <Label Margin="0,0,10,0" FontSize="15" FontFamily="Comic Sans MS" Content="Поиск:" VerticalAlignment="Bottom"/>
             <TextBox x:Name="TBSearch" Width="100" VerticalAlignment="Center" Margin="0,5,5,5" Height="25" VerticalContentAlignment="Center" FontFamily="Comic Sans MS" FontSize="15" TextChanged="TBSearch_TextChanged"/>
-            <ComboBox x:Name="CBManufacturer" Width="150" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Comic Sans MS" FontSize="15" SelectionChanged="CBManufacturer_SelectionChanged">
+            <ComboBox x:Name="CBManufacturer" Width="150" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Comic Sans MS" FontSize="15" SelectionChanged="CBManufacturer_SelectionChanged" SelectedIndex="0">
                 <ComboBoxItem Content="Все производители"/>
                 <ComboBoxItem Content="БТК Текстиль"/>
                 <ComboBoxItem Content="Империя ткани"/>
